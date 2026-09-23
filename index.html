@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AURA — Luxury Fragrances</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Montserrat', sans-serif; }
+    .font-serif { font-family: 'Cormorant+Garamond', serif; }
+  </style>
+</head>
+<body class="bg-[#121212] text-stone-100 antialiased selection:bg-amber-700 selection:text-white">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-[#121212]/90 backdrop-blur border-b border-stone-800">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="font-serif text-2xl tracking-[0.25em] uppercase font-bold text-amber-100">Aura Parfums</a>
+      <nav class="hidden md:flex space-x-8 text-xs uppercase tracking-widest text-stone-400">
+        <a href="#featured" class="hover:text-amber-300 transition">Featured</a>
+        <a href="#collection" class="hover:text-amber-300 transition">Collection</a>
+        <a href="#about" class="hover:text-amber-300 transition">Story</a>
+      </nav>
+      <button onclick="alert('Cart currently contains: ' + cartCount + ' items')" class="border border-stone-700 hover:border-amber-400 px-4 py-2 text-xs tracking-widest uppercase transition">
+        Bag (<span id="cartCount">0</span>)
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div>
+      <span class="text-xs uppercase tracking-[0.3em] text-amber-500 font-semibold block mb-3">Limited Artisan Batch</span>
+      <h1 class="font-serif text-5xl md:text-6xl font-normal leading-tight text-white mb-6">
+        Santal Noir <br><span class="italic text-stone-400">Eau de Parfum</span>
+      </h1>
+      <p class="text-sm text-stone-400 leading-relaxed mb-8">
+        একটি ক্লাসিক এবং দীর্ঘস্থায়ী সুগন্ধি—যাতে রয়েছে স্পাইসড এলাচ, তাজা বার্গামট এবং স্মোকি স্যান্ডালউডের গভীর মিশ্রণ। ফরাসি ওক ব্যারেলে প্রক্রিয়াজাত।
+      </p>
+
+      <!-- Fragrance Notes -->
+      <div class="grid grid-cols-3 gap-4 border-y border-stone-800 py-4 mb-8 text-center">
+        <div>
+          <span class="block text-[10px] uppercase text-stone-500 tracking-wider">Top Note</span>
+          <span class="text-xs text-stone-300 mt-1 block">Cardamom, Bergamot</span>
+        </div>
+        <div>
+          <span class="block text-[10px] uppercase text-stone-500 tracking-wider">Heart Note</span>
+          <span class="text-xs text-stone-300 mt-1 block">French Iris, Violet</span>
+        </div>
+        <div>
+          <span class="block text-[10px] uppercase text-stone-500 tracking-wider">Base Note</span>
+          <span class="text-xs text-stone-300 mt-1 block">Sandalwood, Amber</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <span class="text-2xl font-serif text-amber-200">৳ ৪,৮৫০ <span class="text-xs font-sans text-stone-500">/ 100ml</span></span>
+        <button onclick="addToCart()" class="bg-amber-400 text-stone-950 px-8 py-3.5 text-xs font-semibold uppercase tracking-widest hover:bg-amber-300 transition shadow-lg">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- Product Image -->
+    <div class="relative flex justify-center">
+      <div class="w-full max-w-sm h-[450px] overflow-hidden rounded-2xl border border-stone-800 shadow-2xl">
+        <img 
+          src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=80" 
+          alt="Santal Noir Perfume" 
+          class="w-full h-full object-cover object-center hover:scale-105 transition duration-700"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Collection Grid -->
+  <section id="collection" class="max-w-6xl mx-auto px-6 py-16 border-t border-stone-800">
+    <div class="text-center mb-12">
+      <p class="text-xs uppercase tracking-[0.25em] text-amber-500 mb-2">Our Signature Accords</p>
+      <h2 class="font-serif text-3xl md:text-4xl">The Master Collection</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Card 1 -->
+      <div class="bg-stone-900/50 border border-stone-800 p-6 rounded-xl flex flex-col justify-between group hover:border-amber-500/50 transition">
+        <div class="h-64 overflow-hidden rounded-lg mb-4 bg-stone-950">
+          <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Amber Oud">
+        </div>
+        <div>
+          <span class="text-[10px] uppercase text-stone-500 tracking-wider">Woody & Warm</span>
+          <h3 class="font-serif text-xl text-white mt-1">Royal Amber Oud</h3>
+          <p class="text-xs text-stone-400 mt-2">কম্বোডিয়ান আগরউড এবং রয়াল অ্যাম্বারের রাজকীয় সুবাস।</p>
+        </div>
+        <div class="mt-6 flex justify-between items-center pt-4 border-t border-stone-800/80">
+          <span class="text-amber-200 font-semibold text-sm">৳ ৫,২০০</span>
+          <button onclick="addToCart()" class="text-xs uppercase tracking-wider text-stone-300 hover:text-amber-400 transition font-medium">Add +</button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-stone-900/50 border border-stone-800 p-6 rounded-xl flex flex-col justify-between group hover:border-amber-500/50 transition">
+        <div class="h-64 overflow-hidden rounded-lg mb-4 bg-stone-950">
+          <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Rose Velvet">
+        </div>
+        <div>
+          <span class="text-[10px] uppercase text-stone-500 tracking-wider">Floral & Sweet</span>
+          <h3 class="font-serif text-xl text-white mt-1">Velvet Damascus</h3>
+          <p class="text-xs text-stone-400 mt-2">দামাস্কাস গোলাপ ও ভ্যানিলার মিষ্টি এবং মার্জিত ব্লেন্ড।</p>
+        </div>
+        <div class="mt-6 flex justify-between items-center pt-4 border-t border-stone-800/80">
+          <span class="text-amber-200 font-semibold text-sm">৳ ৪,৫০০</span>
+          <button onclick="addToCart()" class="text-xs uppercase tracking-wider text-stone-300 hover:text-amber-400 transition font-medium">Add +</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-stone-900/50 border border-stone-800 p-6 rounded-xl flex flex-col justify-between group hover:border-amber-500/50 transition">
+        <div class="h-64 overflow-hidden rounded-lg mb-4 bg-stone-950">
+          <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Oceanic Mist">
+        </div>
+        <div>
+          <span class="text-[10px] uppercase text-stone-500 tracking-wider">Fresh & Aquatic</span>
+          <h3 class="font-serif text-xl text-white mt-1">Bleu Oceanique</h3>
+          <p class="text-xs text-stone-400 mt-2">তাজা সামুদ্রিক বাতাস, সাইট্রাস ও সিডারউডের রিফ্রেশিং নোট।</p>
+        </div>
+        <div class="mt-6 flex justify-between items-center pt-4 border-t border-stone-800/80">
+          <span class="text-amber-200 font-semibold text-sm">৳ ৪,২০০</span>
+          <button onclick="addToCart()" class="text-xs uppercase tracking-wider text-stone-300 hover:text-amber-400 transition font-medium">Add +</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-stone-800 py-8 text-center text-xs text-stone-500">
+    <p>&copy; 2026 Aura Parfums Ltd. All rights reserved.</p>
+  </footer>
+
+  <!-- Simple Cart Logic -->
+  <script>
+    let cartCount = 0;
+    function addToCart() {
+      cartCount++;
+      document.getElementById('cartCount').innerText = cartCount;
+    }
+  </script>
+</body>
+</html>
